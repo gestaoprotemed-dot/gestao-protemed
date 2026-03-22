@@ -1,0 +1,26 @@
+<h1>Gestão Protemed</h1>
+
+<form method="post">
+<input name="nome" placeholder="Empresa">
+<input name="cnpj" placeholder="CNPJ">
+<button>Salvar</button>
+</form>
+
+<table border="1">
+<tr><th>Empresa</th><th>CNPJ</th><th>Status</th><th>Ações</th></tr>
+
+{% for e in dados %}
+<tr>
+<td>{{e[1]}}</td>
+<td>{{e[2]}}</td>
+<td>{{e[3]}}</td>
+<td>
+<a href="/bloquear/{{e[0]}}">Bloquear</a>
+<a href="/excluir/{{e[0]}}">Excluir</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<footer>Sistema criado por Isabela Russo</footer>
